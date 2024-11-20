@@ -4,3 +4,4 @@ Project
 *.csv
 __pycache__
 *.spec
+*.db-journal
