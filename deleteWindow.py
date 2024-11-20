@@ -22,17 +22,17 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
         try:
 
             number = self.number.text()
-            db.rm(number)
+            db.rm(number)  # удаление из БД
             with open('/home/nikita/Python_Projects/Project/history.txt', 'a') as file:
 
                 file.write(
                     f"{'{:%d-%m-%Y %H:%M}'.format(datetime.now())} Удалить {number}\n")
 
-            db.close_()
+            db.close_()  # применение изменений и закрытие БД
             self.destroy()
 
         except Exception:
-            db.close_()
+            db.close_()  # применение изменений и закрытие БД
             QMessageBox.critical(
                 self,
                 "Error!",
