@@ -10,7 +10,7 @@ class Db:
 
         self.cursor = self.con.cursor()
 
-    def find_(self, input_, option):
+    def find_(self, input_, option):  # поиск по БД
         self.cursor.execute("SELECT * FROM CarNumbers")
         res = ""
         for el in self.cursor.fetchall():
@@ -47,7 +47,7 @@ class Db:
 
         return res
 
-    def rm(self, number):
+    def rm(self, number):  # удаление из БД
 
         self.cursor.execute(
             'DELETE from CarNumbers where number = ?', (number,))
@@ -57,16 +57,16 @@ class Db:
 
         self.con.commit()
 
-    def close_(self):
+    def close_(self):  # функция закрытия
         self.cursor.close()
         self.con.close()
 
-    def add_(self, number, name, phone, flat):
+    def add_(self, number, name, phone, flat):  # добавление в БД
         self.cursor.execute('INSERT INTO CarNumbers (number, name, flat, phone) VALUES (?, ?, ?, ?)',
                             (number, name, flat, phone))
         self.con.commit()
 
-    def write_(self):
+    def write_(self):  # запись в бд
         self.cursor.execute("SELECT * FROM CarNumbers")
 
         with open('/home/nikita/Python_Projects/Project/db.csv', 'w', newline='') as file:

@@ -19,7 +19,7 @@ class AddWindow(QDialog, Ui_AddWindow):
         self.cancelBtn.clicked.connect(lambda: self.destroy())
 
     def add(self):
-        db = Db()
+        db = Db()  # запуск экзумпляра класса Db
         number = self.number.text()
         name = self.name.text()
         phone = self.phone.text()
@@ -32,6 +32,6 @@ class AddWindow(QDialog, Ui_AddWindow):
             file.write(
                 f"{datetime.now()} Добавить {number}\n")
 
-        db.add_(number, name, phone, flat)
-        db.close_()
+        db.add_(number, name, phone, flat)  # добавление в БД
+        db.close_()  # применение изменений
         self.destroy()

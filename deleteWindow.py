@@ -18,7 +18,7 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
         self.delBtn.clicked.connect(self.delete)
 
     def delete(self):
-        db = Db()
+        db = Db()  # запуск экзумпляра класса Db
         try:
 
             number = self.number.text()
