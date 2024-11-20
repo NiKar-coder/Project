@@ -5,7 +5,8 @@ import sqlite3 as sql
 class Db:
     def __init__(self):
 
-        self.con = sql.connect('/home/nikita/Python_Projects/Project/CarNumbers.db')
+        self.con = sql.connect(
+            '/home/nikita/Python_Projects/Project/CarNumbers.db')
 
         self.cursor = self.con.cursor()
 
@@ -44,13 +45,12 @@ class Db:
                     for _ in range(max([len(number), len(flat), len(phone)])):
                         res += "o"
 
-            res += "\n"
-
         return res
 
     def rm(self, number):
 
-        self.cursor.execute('DELETE from CarNumbers where number = ?', (number,))
+        self.cursor.execute(
+            'DELETE from CarNumbers where number = ?', (number,))
 
         self.cursor.execute(
             'DELETE from CarNumbers where number = ?', (number,))
