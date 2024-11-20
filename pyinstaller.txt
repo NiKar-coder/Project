@@ -1,1 +1,1 @@
-pyinstaller --noconfirm --onefile --windowed --name "Project" --clean "main.py"
+pyinstaller --noconfirm --onefile --windowed --add-data="CarNumbers.ico:." --name "Project" --clean "main.py"

@@ -7,9 +7,6 @@ class Db:
 
         self.con = sql.connect('/home/nikita/Python_Projects/Project/CarNumbers.db')
 
-        self.con = sql.connect(
-            '/home/nikita/Python_Projects/Project/CarNumbers.db')
-
         self.cursor = self.con.cursor()
 
     def find_(self, input_, option):
