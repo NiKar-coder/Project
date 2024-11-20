@@ -26,10 +26,8 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
             db.rm(number)
             with open('/home/nikita/Python_Projects/Project/history.txt', 'a') as file:
 
-                file.write(f"Удалить номер {number}\n")
-
                 file.write(
-                    f"{datetime.now()} Удалить {number}\n")
+                    f"{datetime.now().split(".")[0]} Удалить {number}\n")
 
             db.close_()
             self.destroy()

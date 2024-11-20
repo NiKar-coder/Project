@@ -23,14 +23,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def find_(self):
         self.result.setText(None)
-        db = Db() # Запуск экзумпляра класса Db
-
-        self.result.setText(db.find_(self.input_.text().lower(), self.sender().text()))
+        db = Db()  # Запуск экзумпляра класса Db
 
         self.result.setText(
+            # вывод результата поиска по базе данных в переменную result
             db.find_(self.input_.text().lower(), self.sender().text()))
 
-        db.close_()
+        db.close_()  # завершение работы с БД
 
     def showHistory(self):
         try:
@@ -38,15 +37,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 self.result.setText("".join(file.readlines()))
 
-                self.result.setText(
-                    "".join(file.readlines()))
-
         except Exception:
             self.result.setText("История пуста!")
 
     def write_in_file(self):
         self.result.setText("")
-        db = Db() # Запуск экзумпляра класса Db
-        db.write_()
+        db = Db()  # Запуск экзумпляра класса Db
+        db.write_()  # Запись в БД
         self.result.setText("Успешно!")
-        db.close_()
+        db.close_()  # завершение работы с БД
