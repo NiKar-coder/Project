@@ -25,7 +25,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def find_(self):
         self.result.setText(None)
-        db = Db()
+        db = Db() # Запуск экзумпляра класса Db
 
         self.result.setText(db.find_(self.input_.text().lower(), self.sender().text()))
 
@@ -48,7 +48,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def write_in_file(self):
         self.result.setText("")
-        db = Db()
+        db = Db() # Запуск экзумпляра класса Db
         db.write_()
         self.result.setText("Успешно!")
         db.close_()
