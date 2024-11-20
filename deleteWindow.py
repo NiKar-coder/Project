@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QDialog, QMessageBox
 
@@ -27,7 +26,7 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
             with open('/home/nikita/Python_Projects/Project/history.txt', 'a') as file:
 
                 file.write(
-                    f"{datetime.now().split(".")[0]} Удалить {number}\n")
+                    f"{"{:%d-%m-%Y %H:%M}".format(datetime.now())} Удалить {number}\n")
 
             db.close_()
             self.destroy()
@@ -43,5 +42,3 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
             )
 
             self.destroy()
-
-        self.destroy()
