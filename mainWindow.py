@@ -9,8 +9,6 @@ from mainWindowUI import Ui_MainWindow
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        self.aw = None
-        self.dw = None
         self.setupUi(self)
         action_base = self.menubar.addMenu("Редактировать базу")
         action_base.addAction("Добавить", lambda: AddWindow().exec())

@@ -16,7 +16,7 @@ if __name__ == '__main__':
     qdarktheme.enable_hi_dpi()
     app = QApplication(sys.argv)
     qdarktheme.setup_theme("dark", corner_shape="sharp",
-                           custom_colors={"primary": "#FFFFFF"})
+                           custom_colors={"primary": "#FFFFFF"}) # Установка темной темы
     app.setWindowIcon(QtGui.QIcon(os.path.join(
         os.path.dirname(__file__), 'CarNumbers.ico')))
     ex = MainWindow()
