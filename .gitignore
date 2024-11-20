@@ -1,0 +1,6 @@
+Project
+*.txt
+!pyinstaller.txt
+*.csv
+__pycache__
+*.spec
