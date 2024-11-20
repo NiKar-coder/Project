@@ -24,18 +24,21 @@ class Db:
                     res += f'{name}\n{flat}\n{phone}\n'
                     for _ in range(max([len(name), len(flat), len(phone)])):
                         res += "o"
+                    res += "\n"
 
             elif option == "Тел. номер":
                 if input_ == el[3]:
                     res += f'{number}\n{name}\n{flat}\n'
                     for _ in range(max([len(number), len(flat), len(phone)])):
                         res += "o"
+                    res += "\n"
 
             elif option == "Квартира":
                 if input_ == el[2]:
                     res += f'{number}\n{name}\n{phone}\n'
                     for _ in range(max([len(number), len(name), len(phone)])):
                         res += "o"
+                    res += "\n"
 
             elif option == "ФИО":
 
@@ -44,6 +47,7 @@ class Db:
                     res += f'{number}\n{flat}\n{phone}\n'
                     for _ in range(max([len(number), len(flat), len(phone)])):
                         res += "o"
+                    res += "\n"
 
         return res
 
