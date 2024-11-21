@@ -1,5 +1,6 @@
 Project
 *.txt
+!requirements.txt
 !pyinstaller.txt
 *.csv
 __pycache__
