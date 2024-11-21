@@ -6,9 +6,9 @@ class Db:
     def __init__(self):
 
         self.con = sql.connect(
-            '/home/nikita/Python_Projects/Project/CarNumbers.db')
+            '/home/nikita/Python_Projects/Project/CarNumbers.db') # подключению к БД
 
-        self.cursor = self.con.cursor()
+        self.cursor = self.con.cursor() # установка курсора
 
     def find_(self, input_, option):  # поиск по БД
         self.cursor.execute("SELECT * FROM CarNumbers")
