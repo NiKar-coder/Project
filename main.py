@@ -13,7 +13,7 @@ def except_hook(cls, exception, traceback):  # добавление except_hook 
 
 
 if __name__ == '__main__':
-    qdarktheme.enable_hi_dpi()
+    qdarktheme.enable_hi_dpi()  # подключение поддержки мониторов с большим DPI
     app = QApplication(sys.argv)
     qdarktheme.setup_theme("dark", corner_shape="sharp",
                            custom_colors={"primary": "#FFFFFF"})  # установка тёмной темы
