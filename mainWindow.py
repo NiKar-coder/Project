@@ -44,6 +44,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.result.setText("")
         db = Db()  # запуск экзумпляра класса Db
         db.write_()  # Запись в БД
-        self.result.textCursor().insertImage("OK.png")
+        self.result.textCursor().insertImage("/home/nikita/Python_Projects/Project/OK.png")
 
         db.close_()  # завершение работы с БД
