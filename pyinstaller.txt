@@ -1,1 +1,4 @@
-pyinstaller --noconfirm --onefile --windowed --add-data="CarNumbers.ico:." --name "Project" --clean "main.py"
+Для Linux:
+   pyinstaller --noconfirm --onefile --windowed --add-data="CarNumbers.ico:." --name "Project" --clean "main.py"
+Для Windows:
+   pyinstaller --noconfirm --onefile --windowed --add-data="CarNumbers.ico;." --name "Project" --clean "main.py"
