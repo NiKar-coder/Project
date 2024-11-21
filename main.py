@@ -8,7 +8,8 @@ from PyQt6.QtWidgets import QApplication
 from mainWindow import MainWindow
 
 
-def except_hook(cls, exception, traceback):  # добавление except_hook для более удобной отладки
+# добавление except_hook для более удобной отладки
+def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
