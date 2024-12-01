@@ -6,7 +6,7 @@ class Db:
     def __init__(self):
 
         self.con = sql.connect(
-            '/home/nikita/Python_Projects/Project/CarNumbers.db') # подключению к БД
+            'CarNumbers.db') # подключению к БД
 
         self.cursor = self.con.cursor() # установка курсора
 
@@ -73,7 +73,7 @@ class Db:
     def write_(self):  # запись в бд
         self.cursor.execute("SELECT * FROM CarNumbers")
 
-        with open('/home/nikita/Python_Projects/Project/db.csv', 'w', newline='') as file:
+        with open('db.csv', 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([i[0] for i in self.cursor.description])
             writer.writerows(self.cursor.fetchall())

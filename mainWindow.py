@@ -33,7 +33,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def showHistory(self):
         try:
-            with open("/home/nikita/Python_Projects/Project/history.txt", 'r') as file:
+            with open("history.txt", 'r') as file:
 
                 self.result.setText("".join(file.readlines()))
 
@@ -45,6 +45,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db = Db()  # запуск экзумпляра класса Db
         db.write_()  # Запись в БД
         self.result.textCursor().insertImage(
-            "/home/nikita/Python_Projects/Project/OK.png")
+            "OK.png")
 
         db.close_()  # завершение работы с БД
