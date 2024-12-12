@@ -19,7 +19,7 @@ class AddWindow(QDialog, Ui_AddWindow):
         self.cancelBtn.clicked.connect(lambda: self.destroy())
 
     def add(self):
-        db = Db()  # запуск экзумпляра класса Db
+        db = Db()  # запуск экземпляра класса Db
         number = self.number.text()
         name = self.name.text()
         phone = self.phone.text()
