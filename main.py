@@ -7,8 +7,10 @@ from PyQt6.QtWidgets import QApplication
 
 from mainWindow import MainWindow
 
-
+sys.argv += ['-platform', 'windows:darkmode=2']
 # добавление except_hook для более удобной отладки
+
+
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
@@ -16,6 +18,7 @@ def except_hook(cls, exception, traceback):
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
+    app.setStyle('Fusion')
     app.setWindowIcon(QtGui.QIcon(os.path.join(
         os.path.dirname(__file__), 'CarNumbers.ico')))
     ex = MainWindow()
