@@ -1,7 +1,7 @@
 import os
 import sys
 
-
+from file import File
 from PyQt6 import QtGui
 from PyQt6.QtWidgets import QApplication
 
@@ -13,6 +13,12 @@ sys.argv += ['-platform', 'windows:darkmode=2']
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
+
+
+history = File("history.txt")
+history.create()
+db = File("db.csv")
+db.create()
 
 
 if __name__ == '__main__':

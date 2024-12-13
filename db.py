@@ -1,14 +1,15 @@
-import csv
+from file import File
 import sqlite3 as sql
 
 
 class Db:
+
     def __init__(self):
 
         self.con = sql.connect(
-            'CarNumbers.db') # подключению к БД
+            File('CarNumbers.db').resource_path())  # подключению к БД
 
-        self.cursor = self.con.cursor() # установка курсора
+        self.cursor = self.con.cursor()  # установка курсора
 
     def find_(self, input_, option):  # поиск по БД
         self.cursor.execute("SELECT * FROM CarNumbers")
@@ -55,10 +56,6 @@ class Db:
 
         self.cursor.execute(
             'DELETE from CarNumbers where number = ?', (number,))
-
-        self.cursor.execute(
-            'DELETE from CarNumbers where number = ?', (number,))
-
         self.con.commit()
 
     def close_(self):  # функция закрытия
@@ -73,7 +70,6 @@ class Db:
     def write_(self):  # запись в бд
         self.cursor.execute("SELECT * FROM CarNumbers")
 
-        with open('db.csv', 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([i[0] for i in self.cursor.description])
-            writer.writerows(self.cursor.fetchall())
+        db = File("db.csv")
+        db.write_([i[0] for i in self.cursor.description],
+                  self.cursor.fetchall())

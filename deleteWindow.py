@@ -1,7 +1,7 @@
 from datetime import datetime
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QDialog, QMessageBox
-
+from file import File
 from db import Db
 from deleteWindowUI import Ui_DeleteWindow
 
@@ -23,12 +23,12 @@ class DeleteWindow(QDialog, Ui_DeleteWindow):
 
             number = self.number.text()
             db.rm(number)  # удаление из БД
-            with open('/home/nikita/Python_Projects/Project/history.txt', 'a') as file:
+            db.close_()
+            history = File("history.txt")
+            history.add_(
+                f"{'{:%d-%m-%Y %H:%M}'.format(datetime.now())} Удалить {number}\n")
 
-                file.write(
-                    f"{'{:%d-%m-%Y %H:%M}'.format(datetime.now())} Удалить {number}\n")
-
-            db.close_()  # применение изменений и закрытие БД
+            # применение изменений и закрытие БД
             self.destroy()
 
         except Exception:

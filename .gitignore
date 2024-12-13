@@ -5,3 +5,4 @@ __pycache__
 *.db-journal
 .idea
 .vscode
+history.txt

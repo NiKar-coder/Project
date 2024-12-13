@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QMainWindow
-
+from file import File
 from addWindow import AddWindow
 from db import Db
 from deleteWindow import DeleteWindow
@@ -33,11 +33,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def showHistory(self):
         try:
-            with open("history.txt", 'r') as file:
-
-                self.result.setText("".join(file.readlines()))
-
-        except Exception:
+            history = File("history.txt")
+            self.result.setText(history.read_())
+        except FileNotFoundError:
             self.result.setText("История пуста!")
 
     def write_in_file(self):
@@ -45,6 +43,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db = Db()  # запуск экзумпляра класса Db
         db.write_()  # Запись в БД
         self.result.textCursor().insertImage(
-            "OK.png")
+            File("OK.png").resource_path())
 
         db.close_()  # завершение работы с БД

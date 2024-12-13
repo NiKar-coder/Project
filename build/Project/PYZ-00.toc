@@ -127,6 +127,7 @@
   ('email.utils',
    'C:\\Program Files\\Python313\\Lib\\email\\utils.py',
    'PYMODULE'),
+  ('file', 'C:\\Users\\Nikita\\Python_Projects\\Project\\file.py', 'PYMODULE'),
   ('fnmatch', 'C:\\Program Files\\Python313\\Lib\\fnmatch.py', 'PYMODULE'),
   ('fractions', 'C:\\Program Files\\Python313\\Lib\\fractions.py', 'PYMODULE'),
   ('getopt', 'C:\\Program Files\\Python313\\Lib\\getopt.py', 'PYMODULE'),
