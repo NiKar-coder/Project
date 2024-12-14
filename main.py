@@ -1,4 +1,3 @@
-import os
 import sys
 
 from file import File
@@ -25,8 +24,7 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
-    app.setWindowIcon(QtGui.QIcon(os.path.join(
-        os.path.dirname(__file__), 'CarNumbers.ico')))
+    app.setWindowIcon(QtGui.QIcon(File('CarNumbers.ico').resource_path()))
     ex = MainWindow()
     ex.show()
     sys.excepthook = except_hook

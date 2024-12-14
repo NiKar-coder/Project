@@ -10,9 +10,11 @@ class File:
 
     def resource_path(self):
         if hasattr(sys, '_MEIPASS'):
-            return os.path.join(sys._MEIPASS, self.name)
+            base_path = sys._MEIPASS
         else:
-            return os.path.join(os.path.abspath("."), self.name)
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, os.path.abspath(self.name))
 
     def add_(self, text):
         with open(self.resource_path(), 'a', encoding='utf-8') as file:

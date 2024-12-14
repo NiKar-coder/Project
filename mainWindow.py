@@ -35,7 +35,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         try:
             history = File("history.txt")
             self.result.setText(history.read_())
-        except FileNotFoundError:
+        except Exception:
             self.result.setText("История пуста!")
 
     def write_in_file(self):
