@@ -1,1 +1,0 @@
-C:\Users\Nikita\Python_Projects\Project\Project\Scripts\pyinstaller --distpath "." --noconfirm --onefile --windowed --icon="CarNumbers.ico" --add-data="CarNumbers.ico;." --name "CarNumbers" --clean "main.py"
