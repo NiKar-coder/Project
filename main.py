@@ -5,9 +5,7 @@ from PyQt6 import QtGui
 from PyQt6.QtWidgets import QApplication
 
 from mainWindow import MainWindow
-
-sys.argv += ['-platform', 'windows:darkmode=2']
-# добавление except_hook для более удобной отладки
+import qdarktheme
 
 
 def except_hook(cls, exception, traceback):
@@ -21,9 +19,10 @@ db.create()
 
 
 if __name__ == '__main__':
-
+    qdarktheme.enable_hi_dpi()
     app = QApplication(sys.argv)
-    app.setStyle('Fusion')
+    qdarktheme.setup_theme("dark", corner_shape="sharp",
+                           custom_colors={"primary": "#FFFFFF"})
     app.setWindowIcon(QtGui.QIcon(File('CarNumbers.ico').resource_path()))
     ex = MainWindow()
     ex.show()
