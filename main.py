@@ -12,12 +12,6 @@ def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
-history = File("history.txt")
-history.create()
-db = File("db.csv")
-db.create()
-
-
 if __name__ == '__main__':
     qdarktheme.enable_hi_dpi()
     app = QApplication(sys.argv)

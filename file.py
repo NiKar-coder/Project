@@ -30,7 +30,3 @@ class File:
             writer = csv.writer(file)
             writer.writerow(arr)
             writer.writerows(cursor)
-
-    def create(self):
-        with open(self.resource_path(), 'a'):
-            pass
